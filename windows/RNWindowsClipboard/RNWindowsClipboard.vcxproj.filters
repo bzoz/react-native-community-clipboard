@@ -20,7 +20,6 @@
     <ClInclude Include="RNWindowsClipboard.h" />
   </ItemGroup>
   <ItemGroup>
-    <Midl Include="Class.idl" />
     <Midl Include="ReactPackageProvider.idl" />
   </ItemGroup>
   <ItemGroup>
