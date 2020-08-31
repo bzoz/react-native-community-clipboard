@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 //import {useClipboard} from '../src';
 
-export const App: React.FC = () => {
+const App: React.FC = () => {
   const [text, setText] = useState('');
   const [data, setString] = useState('');
 
