@@ -7,11 +7,11 @@
   IgnorableNamespaces="uap mp">
 
  <Identity
-    Name="3344b52f-8331-418b-9c30-a20f9a4672f0"
+    Name="7aaead06-62cd-43f2-a951-8242a86242c8"
     Publisher="CN=ja"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="3344b52f-8331-418b-9c30-a20f9a4672f0" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="7aaead06-62cd-43f2-a951-8242a86242c8" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>RNClipboardExample</DisplayName>

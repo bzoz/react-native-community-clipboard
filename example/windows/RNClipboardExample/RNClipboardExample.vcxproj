@@ -5,7 +5,7 @@
     <CppWinRTOptimized>true</CppWinRTOptimized>
     <CppWinRTRootNamespaceAutoMerge>true</CppWinRTRootNamespaceAutoMerge>
     <MinimalCoreWin>true</MinimalCoreWin>
-    <ProjectGuid>{e37441fb-9f34-4891-925c-420169852133}</ProjectGuid>
+    <ProjectGuid>{cbd12a43-5743-46e0-8fac-4e6b816df5b4}</ProjectGuid>
     <ProjectName>RNClipboardExample</ProjectName>
     <RootNamespace>RNClipboardExample</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>
@@ -16,7 +16,7 @@
     <WindowsTargetPlatformVersion Condition=" '$(WindowsTargetPlatformVersion)' == '' ">10.0.18362.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformMinVersion>10.0.16299.0</WindowsTargetPlatformMinVersion>
     <PackageCertificateKeyFile>RNClipboardExample_TemporaryKey.pfx</PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>D06FEDAFC0AE5929090EC16583B849215CD267D5</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>87FF325D070D08D9BBB0990B4BC00CAA2B512987</PackageCertificateThumbprint>
     <PackageCertificatePassword>password</PackageCertificatePassword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
