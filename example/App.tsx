@@ -1,117 +1,79 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
-import React from 'react';
+import React, { useState } from 'react';
 import {
-  SafeAreaView,
   StyleSheet,
-  ScrollView,
-  View,
   Text,
-  StatusBar,
+  View,
+  Button,
+  TextInput,
+  Alert,
+  SafeAreaView,
 } from 'react-native';
+//import {useClipboard} from '../src';
 
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+export const App: React.FC = () => {
+  const [text, setText] = useState('');
+  const [data, setString] = useState('');
 
-declare const global: {HermesInternal: null | {}};
+  const writeToClipboard = () => {
+    setString(text);
+    Alert.alert(`Copied to clipboard: ${text}`);
+  };
 
-const App = () => {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.tsx</Text> to change
-                this screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    </>
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.header}>Clipboard Module</Text>
+      <View style={styles.main}>
+        <Text style={styles.boldText}>Clipboard Contents: </Text>
+        <Text style={styles.clipboardContent}>{data}</Text>
+        <View style={styles.seperator} />
+        <TextInput
+          style={styles.textInput}
+          onChangeText={(input) => setText(input)}
+          value={text}
+          placeholder="Type here..."
+        />
+        <Button onPress={writeToClipboard} title="Write to Clipboard" />
+      </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
+  container: {
+    flex: 1,
+    backgroundColor: '#eef',
+    alignItems: 'center',
   },
-  engine: {
-    position: 'absolute',
-    right: 0,
+  main: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
+  header: {
     fontWeight: '700',
+    fontSize: 30,
+    marginBottom: 10,
   },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
+  boldText: {
     fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
+    marginBottom: 10,
+  },
+  seperator: {
+    height: StyleSheet.hairlineWidth,
+    backgroundColor: 'gray',
+    width: '80%',
+    marginVertical: 20,
+  },
+  textInput: {
+    borderColor: 'gray',
+    borderWidth: 1,
+    width: '80%',
+    paddingHorizontal: 80,
+    paddingVertical: 8,
+    marginBottom: 16,
+  },
+  clipboardContent: {
+    marginBottom: 20,
   },
 });
 
