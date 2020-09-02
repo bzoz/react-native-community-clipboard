@@ -10,10 +10,10 @@ namespace RNWindowsClipboard {
 
   struct RNCClipboard {
     REACT_METHOD(getString);
-    std::string getString() noexcept;
+    void getString(winrt::Microsoft::ReactNative::ReactPromise<winrt::Microsoft::ReactNative::JSValue> promise) noexcept;
     
     REACT_METHOD(setString);
-    void setString(std::string text) noexcept;
+    void setString(std::string text, winrt::Microsoft::ReactNative::ReactPromise<winrt::Microsoft::ReactNative::JSValue> promise) noexcept;
   };
 
 }
